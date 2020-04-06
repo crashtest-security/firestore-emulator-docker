@@ -21,9 +21,14 @@ or with compose
 ```YAML
 version: "2"
 
+volumes:
+  firestore-data:
+
 services:
   firestore-emulator:
-    image: pathmotion/cloud-firestore-emulator
+    image: pathmotion/firestore-emulator-docker
+    ports:
+      - 8080:8080
     volumes:
       - firestore-data:/opt/data
     environment:
